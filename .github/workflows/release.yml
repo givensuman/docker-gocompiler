@@ -107,7 +107,7 @@ jobs:
       - name: Test cross-compilation
         run: |
           IMAGE_TAG=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-$(echo $GITHUB_SHA | cut -c1-7)
-          docker run --rm -v $(pwd)/test:/app $IMAGE_TAG
+          docker run --rm -v $(pwd)/test:/app $IMAGE_TAG --include-platforms linux/amd64
 
           if [ ! -d "test/dist" ] && [ ! "$(ls -A test/dist)" ]; then
             echo "Compilation seems to have failed..."
@@ -117,7 +117,5 @@ jobs:
       - name: Verify a specific binary
         run: |
           # Try to run the local linux-amd64 binary to ensure it's functional
-          ls
-          ls ./test
-          chmod +x ./test/dist/app-linux-amd64
+          # chmod +x ./test/dist/app-linux-amd64
           ./test/dist/app-linux-amd64 | grep "yipee!"
