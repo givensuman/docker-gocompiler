@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./assets/logo.png" alt="project logo" width="200">
+</div>
+
 # givensuman/docker-gocompiler
 
 a compiler-as-a-service for Go
