@@ -1,0 +1,9 @@
+.git
+.gitattributes
+.github
+.editorconfig
+README.md
+node_modules
+.env
+.DS_Store
+*.log
