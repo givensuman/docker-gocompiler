@@ -94,7 +94,7 @@ jobs:
           cd test
           go mod init test
           # Create a Go file
-          cat <<EOF > main.go
+          cat << EOF > main.go
           package main
           import "C"
           import "fmt"
@@ -107,9 +107,9 @@ jobs:
       - name: Test cross-compilation
         run: |
           IMAGE_TAG=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-$(echo $GITHUB_SHA | cut -c1-7)
-          docker run --rm -v $(pwd)/test-project:/app $IMAGE_TAG
+          docker run --rm -v $(pwd)/test:/app $IMAGE_TAG
 
-          if [ ! -d "test-project/dist" ] && [ ! "$(ls -A test-project/dist)" ]; then
+          if [ ! -d "test/dist" ] && [ ! "$(ls -A test/dist)" ]; then
             echo "Compilation seems to have failed..."
             exit 1
           fi
@@ -117,5 +117,7 @@ jobs:
       - name: Verify a specific binary
         run: |
           # Try to run the local linux-amd64 binary to ensure it's functional
-          chmod +x test-project/dist/app-linux-amd64
-          ./test-project/dist/app-linux-amd64 | grep "yipee!"
+          ls
+          ls ./test
+          chmod +x ./test/dist/app-linux-amd64
+          ./test/dist/app-linux-amd64 | grep "yipee!"
