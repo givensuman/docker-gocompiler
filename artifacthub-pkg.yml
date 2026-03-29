@@ -1,0 +1,16 @@
+# Artifact Hub package metadata file
+# References:
+# https://github.com/artifacthub/hub/blob/master/docs/metadata/artifacthub-pkg.yml
+# https://artifacthub.io/docs/topics/repositories/keda-scalers/
+# https://github.com/kedacore/external-scalers/blob/main/artifacthub/azure-cosmos-db/0.1.0/artifacthub-pkg.yml
+# https://artifacthub.io/packages/keda-scaler/keda-official-external-scalers/external-scaler-azure-cosmos-db?modal=install
+
+name: gocompiler
+displayName: givensuman/docker-gocompiler
+description: a compiler-as-a-service for Go
+logoURL: https://raw.githubusercontent.com/givensuman/docker-gocompiler/main/assets/logo.png
+license: MIT
+homeURL: https://github.com/givensuman/docker-gocompiler
+maintainers:
+  - name: Given Suman
+    email: givensuman@duck.com

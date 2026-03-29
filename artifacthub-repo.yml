@@ -1,0 +1,6 @@
+# Artifact Hub repository metadata file
+# Used to become verified publisher and more - https://artifacthub.io/docs/topics/repositories/#verified-publisher
+repositoryID: 2e8c956d-4ddc-4423-a41e-6daff586d16c
+owners:
+  - name: Given Suman
+    email: givensuman@duck.com
